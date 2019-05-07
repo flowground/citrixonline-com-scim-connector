@@ -1,0 +1,53 @@
+{
+    "type": "object",
+    "properties": {
+        "Authorization": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "description": "Describes a new user",
+            "properties": {
+                "displayName": {
+                    "description": "The user's display name",
+                    "type": "string"
+                },
+                "locale": {
+                    "description": "The user's language settings",
+                    "type": "string"
+                },
+                "name": {
+                    "description": "The user's full name",
+                    "properties": {
+                        "familyName": {
+                            "description": "The user's surname",
+                            "type": "string"
+                        },
+                        "givenName": {
+                            "description": "The user's first name",
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "familyName",
+                        "givenName"
+                    ],
+                    "type": "object"
+                },
+                "password": {
+                    "description": "The user's password",
+                    "type": "string"
+                },
+                "timezone": {
+                    "description": "The user's time zone",
+                    "type": "string"
+                },
+                "userName": {
+                    "description": "The user's username, usually their email address",
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

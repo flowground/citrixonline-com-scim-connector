@@ -1,0 +1,12 @@
+{
+    "type": "object",
+    "properties": {
+        "Authorization": {
+            "required": true,
+            "type": "string"
+        },
+        "filter": {
+            "type": "string"
+        }
+    }
+}

@@ -1,0 +1,48 @@
+{
+    "type": "object",
+    "properties": {
+        "Authorization": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "description": "Describes the group to create",
+            "properties": {
+                "displayName": {
+                    "description": "The group's display name",
+                    "type": "string"
+                },
+                "members": {
+                    "description": "An array of members",
+                    "items": {
+                        "description": "A member of a group. This can be a group or an user",
+                        "properties": {
+                            "type": {
+                                "description": "The type of member",
+                                "enum": [
+                                    "group",
+                                    "user"
+                                ],
+                                "type": "string"
+                            },
+                            "value": {
+                                "description": "Depending on the member type this is a groupKey or an userKey",
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "type",
+                            "value"
+                        ],
+                        "type": "object"
+                    },
+                    "type": "array"
+                }
+            },
+            "required": [
+                "displayName"
+            ],
+            "type": "object"
+        }
+    }
+}
